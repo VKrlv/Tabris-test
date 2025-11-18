@@ -18,4 +18,5 @@ nginx — отдаёт фронт и проксирует API
 
 node — сборка Vue-фронта 
 
-Фронт сразу будет доступен: http://localhost:8080
+Фронт будет доступен без доп.действий, но не сразу (пока не загрузятся node_modules): http://localhost:8080
+<img width="1200" height="634" alt="image" src="https://github.com/user-attachments/assets/338ffb90-addc-4318-aa3a-4bd97e094c61" />
