@@ -5,13 +5,6 @@ const projectRoot = path.resolve(__dirname, '..');
 const dist = path.join(projectRoot, 'dist');
 const target = path.join(projectRoot, '..', 'public', 'assets');
 
-// очистка содержимого, но не самой папки - собирал в Windows, не смог разобраться с нормальным удалением, удаление папки выдавало EBUSY
-cleanFolder(target);
-
-copyRecursive(dist, target);
-
-console.log(`Copied ${dist} -> ${target} preserving folder structure`);
-
 function cleanFolder(folder) {
     if (!fs.existsSync(folder)) return;
     fs.readdirSync(folder).forEach(file => {
@@ -36,3 +29,10 @@ function copyRecursive(src, dest) {
         fs.copyFileSync(src, dest);
     }
 }
+
+// очистка содержимого, но не самой папки - собирал в Windows, не смог разобраться с нормальным удалением, удаление папки выдавало EBUSY
+cleanFolder(target);
+
+copyRecursive(dist, target);
+
+console.log(`Copied ${dist} -> ${target} preserving folder structure`);
